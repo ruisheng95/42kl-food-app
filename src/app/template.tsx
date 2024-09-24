@@ -141,7 +141,7 @@ const Template = ({ children }: { children?: React.ReactNode }) => {
                 <Typography
                   variant="h4"
                   component={Link}
-                  href="/"
+                  href={`${BASE_PATH}`}
                   sx={{
                     flexGrow: 1,
                     alignItems: "center",
