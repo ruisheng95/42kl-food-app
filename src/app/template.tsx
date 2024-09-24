@@ -32,6 +32,9 @@ const theme = createTheme({
       main: "#ff2ba5",
     },
   },
+  colorSchemes: {
+    dark: true,
+  },
 });
 
 const ElevationScroll = (props: { children: React.ReactElement }) => {
