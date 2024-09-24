@@ -15,7 +15,9 @@ export async function POST(request: Request) {
 
     
     // Define where you want to save the file (not recommended to save in the public directory)
-    const filePath = path.join(process.cwd(), 'public', 'data', 'user-input.json');
+    const filePath = path.join(
+      process.cwd(), 'src', 'app', 'domain', 'database', 'user-order.txt'
+    );
 
     // Ensure that the folder exists (create if necessary)
     await fs.mkdir(path.dirname(filePath), { recursive: true });

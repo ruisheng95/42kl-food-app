@@ -19,13 +19,14 @@ const Cart = () => {
     cart?.map((data) => data.quantity).reduce((v1, v2) => v1 + v2, 0) || 0;
   const handleClick = async (name: string,
       quantity: number, total_price: number) => {
-    const response = await fetch('/api/upload', {
+    const response = await fetch('/domain/database/orderReceived', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ item_name: name,
-          quantity: quantity, total_price: total_price }),
+      body: JSON.stringify({
+        item_name: name, quantity: quantity, total_price: total_price
+      }),
     });
 
     if (response.ok) {
