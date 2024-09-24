@@ -72,7 +72,7 @@ const Cart = () => {
               </ListItemButton>
             </ListItem>
             <ListItem>
-              <ListItemButton>
+              <ListItemButton onClick={() => handleClick("eco-test", 1, 1)}>
                 <ListItemIcon>
                   <EnergySavingsLeafIcon />
                 </ListItemIcon>
