@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "/42kl-food-app",
+  basePath: "",
   images: {
     unoptimized: true,
   },

@@ -4,6 +4,8 @@ import { Container, Grid2, Typography } from "@mui/material";
 import FoodCard from "./components/FoodCard";
 import { useContext } from "react";
 import { CartContext } from "@/utils/CartContext";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const Home = () => {
   const { cart, setCart } = useContext(CartContext);
