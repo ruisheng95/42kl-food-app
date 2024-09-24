@@ -17,7 +17,24 @@ const Cart = () => {
   const { cart } = useContext(CartContext);
   const isCartEmpty =
     cart?.map((data) => data.quantity).reduce((v1, v2) => v1 + v2, 0) || 0;
-  return (
+  const handleClick = async (name: string,
+      quantity: number, total_price: number) => {
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ item_name: name,
+          quantity: quantity, total_price: total_price }),
+    });
+
+    if (response.ok) {
+      alert('File saved successfully!');
+    } else {
+      alert('Error saving the file');
+    }
+  };
+    return (
     <>
       <List>
         {!isCartEmpty ? (
@@ -47,7 +64,7 @@ const Cart = () => {
               )
             )}
             <ListItem>
-              <ListItemButton>
+              <ListItemButton onClick={() => handleClick("test", 1, 1)}>
                 <ListItemIcon>
                   <ShoppingCartIcon />
                 </ListItemIcon>
