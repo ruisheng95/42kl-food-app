@@ -11,7 +11,7 @@ export const useIsMounted = () => {
   return mounted;
 };
 
-export const TITLE = "ABC";
+export const TITLE = "FoodPanda Demo";
 
 export const BASE_PATH = "/42kl-food-app";
 
@@ -20,19 +20,19 @@ export const PINK_COLOR = "#ff2ba5";
 export const DATA: FoodCardProps[] = [
   {
     name: "Nasi Lemak",
-    img: "/42kl-food-app/images/nasi-lemak.jpg",
+    img: `${BASE_PATH}/images/nasi-lemak.jpg`,
     price: 10,
     quantity: 0,
   },
   {
     name: "Satay",
-    img: "/42kl-food-app/images/satay.jpg",
+    img: `${BASE_PATH}/images/satay.jpg`,
     price: 5,
     quantity: 0,
   },
   {
     name: "Roti Canai",
-    img: "/42kl-food-app/images/roti-canai.jpg",
+    img: `${BASE_PATH}/images/roti-canai.jpg`,
     price: 2,
     quantity: 0,
   },

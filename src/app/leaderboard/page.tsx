@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import PinkTypography from "../components/PinkTypography";
 import { useState } from "react";
+import RewardDisplay from "../components/RewardDisplay";
 
 const Leaderboard = () => {
   const [endSeason, setEndSeason] = useState(false);
@@ -90,10 +91,7 @@ const Leaderboard = () => {
               justifyContent: "center",
             }}
           >
-            <Typography variant="h2" fontWeight={700}>
-              5
-            </Typography>
-            <Typography fontWeight={700}>Reward</Typography>
+            <RewardDisplay />
           </Box>
           <Button
             variant="contained"
@@ -134,7 +132,9 @@ const Leaderboard = () => {
             Hooray!
           </Typography>
           <Typography textAlign={"center"} fontWeight={700}>
-            You have successfully claimed 5 reward points
+            You have successfully claimed
+            <RewardDisplay />
+            reward points
           </Typography>
         </DialogContent>
       </Dialog>

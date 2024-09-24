@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Welcome to ABC`,
+  title: `FoodPanda Demo`,
   description: `Welcome to ABC. TODO`,
 };
 

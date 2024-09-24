@@ -18,13 +18,16 @@ import {
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
+import PetsIcon from '@mui/icons-material/Pets';
+import StatisticIcon from '@mui/icons-material/Leaderboard';
 import { useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import React from "react";
-import { TITLE, useIsMounted } from "@/utils/common";
+import { BASE_PATH, TITLE, useIsMounted } from "@/utils/common";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CartContextProvider from "@/utils/CartContext";
 import Cart from "./components/Cart";
+import LeaderboardIcon from '@mui/icons-material/EmojiEvents';
 
 const theme = createTheme({
   palette: {
@@ -80,11 +83,29 @@ const Template = ({ children }: { children?: React.ReactNode }) => {
         <Drawer open={openLeftDrawer} onClose={toggleLeftDrawer(false)}>
           <Box sx={{ width: 250 }}>
             <List>
-              <ListItemButton component={Link} href={"/"}>
+              <ListItemButton component={Link} href={`${BASE_PATH}`}>
                 <ListItemIcon>
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="Home" />
+              </ListItemButton>
+              <ListItemButton component={Link} href={`${BASE_PATH}/statistics`}>
+                <ListItemIcon>
+                  <StatisticIcon />
+                </ListItemIcon>
+                <ListItemText primary="Statistics" />
+              </ListItemButton>
+              <ListItemButton component={Link} href={`${BASE_PATH}/leaderboard`}>
+                <ListItemIcon>
+                  <LeaderboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Leaderboard" />
+              </ListItemButton>
+              <ListItemButton component={Link} href={`${BASE_PATH}/panda_game/index.html`} target="_blank" rel="noopener noreferrer">
+                <ListItemIcon>
+                  <PetsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Panda" />
               </ListItemButton>
               <ListItemButton disabled>
                 <ListItemIcon>
@@ -100,7 +121,7 @@ const Template = ({ children }: { children?: React.ReactNode }) => {
           onClose={toggleCartDrawer(false)}
           anchor={"right"}
         >
-          <Box sx={{ width: 250 }}>
+          <Box sx={{ width: 450 }}>
             <Cart />
           </Box>
         </Drawer>
